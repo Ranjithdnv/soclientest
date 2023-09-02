@@ -10,7 +10,7 @@ function App() {
   const [notifications, setNotifications] = useState([]);
 
   useEffect(() => {
-    setSocket(io("https://sock-hepv.onrender.com:5000"));
+    setSocket(io("https://sock-hepv.onrender.com"));
   }, []);
 
 

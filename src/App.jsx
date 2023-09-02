@@ -10,7 +10,7 @@ function App() {
   const [notifications, setNotifications] = useState([]);
 
   useEffect(() => {
-    setSocket(io("https://bigserver.onrender.com"));
+    setSocket(io("https://bigserver.onrender.com:5000"));
   }, []);
 
 

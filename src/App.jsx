@@ -10,7 +10,7 @@ function App() {
   const [notifications, setNotifications] = useState([]);
 
   useEffect(() => {
-    setSocket(io("https://sock-hepv.onrender.com:5000")); //https://sock-hepv.onrender.com/
+    setSocket(io("https://sock-hepv.onrender.com")); //https://sock-hepv.onrender.com/
   }, []);
 
 
@@ -54,8 +54,7 @@ function App() {
             onChange={(e) => setUsernamess(e.target.value)}
           />
           <button onClick={() => setUser(username)}>Login</button>
-         <div>hhh</div>
-         <div><div>jing</div></div>
+        
           <button onClick={func}>button</button>
           <div>   {notifications?.map((n) => <div>{n.text}</div>)}</div>
         </div>

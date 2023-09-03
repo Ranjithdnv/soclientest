@@ -3,6 +3,7 @@ import './App.css';
 import { useEffect, useState } from "react";
 import { io } from "socket.io-client";
 function App() {
+  const [text, settext] = useState("");
   const [username, setUsername] = useState("");
   const [usernamess, setUsernamess] = useState("");
   const [user, setUser] = useState("");
@@ -24,7 +25,7 @@ function App() {
   const func=()=>{
   socket.emit("sendText", {
   senderName: user,
-  receiverName: usernamess,text:"hhhhhh"
+  receiverName: usernamess,text:text
   
 })
 }
@@ -50,9 +51,15 @@ function App() {
           />
           <input
             type="text"
-            placeholder="username"
+            placeholder="send to"
             onChange={(e) => setUsernamess(e.target.value)}
           />
+<input
+            type="text"
+            placeholder="text"
+            onChange={(e) => settext(e.target.value)}
+          />
+
           <button onClick={() => setUser(username)}>Login</button>
         
           <button onClick={func}>button</button>
